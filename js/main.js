@@ -32,3 +32,23 @@ const teamCards = [
         posizione: "Graphic Designer",
     },
 ];
+
+// prendo dall'html gli elemnti necessari
+const teamCardsContainer = document.querySelector(".team-container");
+
+// creo un ciclo per creare e stampare le card in html
+for (let i = 0; i < teamCards.length; i++) {
+    const card = `
+    <div class="team-card">
+        <div class="card-image">
+            <img src="${teamCards[i].img}" alt="${teamCards[i].nome}">
+        </div>
+        <div class="card-text">
+            <h3>${teamCards[i].nome}</h3>
+            <p>${teamCards[i].posizione}</p>
+        </div>
+    </div>`;
+
+    
+    teamCardsContainer.innerHTML += card;
+}
